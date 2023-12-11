@@ -1,0 +1,9 @@
+4/13/2023 9:12 (pm)	Created battle feature where you first have the option to choose between battling, running, looking at your bag, or 				swapping pokemon. Also allows you to catch a wild pokemon and add it to your bag when you defeat them
+stats.
+
+4/14/2023 9:30 (am)    Created feature of pokecenters and pokemarts. Pokecenters heal all of your pokemon and pokemarts fill up all of your
+				pokeballs, potions, and revives back to 5.
+
+4/14/2023 3:21 (pm)     Implemented damage multiplier so that the battles have more depth to them.
+
+

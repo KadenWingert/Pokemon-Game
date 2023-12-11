@@ -1,0 +1,12 @@
+1/25/2023 5:24	Created the following functions: createEWPath(), createNSPath(), printMap(), 
+	(p.m)	      makeWalls(). Up to this point, the board is able to be printed with 
+			borders and paths
+1/25/2023 8:55	Created the pokemarket, pokecenter, and a helper function named validBuilding.
+	(p.m)		Now, a C and an M are randomly printed on the board in a location that is always 
+			next to a path. I also begin a function grass() where I created 3 patches of both short
+			and tall grass to fill a large portion of the board. Finally, I created a function 
+			that will fill the remaining spaces with boulders and trees
+1/26/2023 11:53   Changed the grass() function to terrain(). It now will generate 2 water areas, 
+	(a.m)		one boulder area,3 tall grass regions, and 3 short grass regions. It then fills
+			the remaining terrain with either long or short grass. I then loop through one last
+			time to put a random amount of trees through out the board.

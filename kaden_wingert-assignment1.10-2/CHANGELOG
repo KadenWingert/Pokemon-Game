@@ -1,0 +1,11 @@
+4/15/2023 12:12 (p.m)			Created the board for the game and initialized the terminal using ncurses. Implemented all of the game
+						logic and now I just need finishing touches on the UI and any additional features I decide to add.
+						For the main part of the game, I created a class which has functions such as play, reset, checkForWin,
+						and makeMove.
+
+4/16/2023 3:21 (p.m)			Added color to the game. Implemented the feature of playing the game again if they would like, though 						resetting the board
+
+4/16/2023 5:12 (p.m)			Created makefile which comiles the code with: make    and executes with ./connect4		
+
+
+4/16/2023 10:12 (p.m)			I felt like the game needed another feature, so I added the ability to undo your move with the key 'u'. 						This is accomplished by using a stack, and each move is pushed to the stack as they occur. The move is 						popped when you call the undo move function, then that spot is removed from the board, and the board is 						redrawn	

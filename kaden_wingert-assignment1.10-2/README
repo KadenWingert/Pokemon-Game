@@ -1,0 +1,5 @@
+For this assignment, I decided to create a connect 4 terminal game in c++. I constructed the user interface in ncurses and used a window to display the board. It will tell you whose turn it currently is, as well as tell you when you win. The game is played by pressing a number on the keyboard. The number 1 corresponds with the far left column and 2 is the second from left column and so on. Upon finishing the game, you will be asked if you would like to play again.
+
+As far as the logic of the game, you need to have a game loop where the majority of the game is actaully played. You also need to check the user's move to see if they pressed a valid key and if the column is currently full or not, and check if that move won the player the game.
+
+I also decided to add the ability to undo a move which is done with the key 'u'. This updates the board and redraws it as if that move had never happened

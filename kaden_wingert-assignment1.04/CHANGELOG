@@ -1,0 +1,14 @@
+2/15/2023 12:59 (pm)	Added the condition to the main where the user can type --number (any number)
+				and the program will generate that number of NPC's 
+
+	
+2/15/2023 4:09 (pm)     Added the function placeNPCs(map_t *m) which randomly places the pcs on the map
+				Also created the function checkForCharacters(map_t *m, int randY, int randX)
+				which checks if a character is already on a certain spot on the map
+		
+2/20/2023 7:53 (pm)	Added feature to the map struct so that the pc and npc's locations are saved
+				   
+
+   
+			
+

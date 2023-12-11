@@ -1,0 +1,27 @@
+2/1/2023 5:15	Created struct Map which holds the maps gate borders, map coordinates,and that maps 
+			board. I also made a function called moveMaps which should allow you to go from
+			one map in the world to another. This currently produces a segmentation fault that
+			needs some debugging.
+	(p.m)	
+
+2/2/2023 1:00	Allocated space for a map if the current maps neighbor does not yet exist.
+			Also generates the neighbor boards.
+
+	(p.m)    
+
+2/5/2023 7:19	Added function pokeSpawn which is called in the pokeMart and pokeCenter functions.
+	(p.m) 	This uses the manhattan distance between the xCoord and yCoord
+			as well as another formula to generate a pokeCenter or pokeMart based on the
+			a probabilty given by the formula. The starting map will always have both the
+			pokeMart as well as a pokeCenter
+
+2/6/2023 7:46	Fixed bug, so now my maps save and you can revisit them. I also implemented the 
+			feature that enables the outside maps not to have gates, as well as implementing 
+			the feature that connects neighboring gates
+	(p.m) 	
+		
+	   
+
+   
+			
+

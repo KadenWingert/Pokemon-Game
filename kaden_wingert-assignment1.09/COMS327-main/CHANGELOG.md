@@ -1,0 +1,58 @@
+# Changelog
+
+- 09/07/2023, 11:09 AM: Initialized project (main.c, CHANGELOG.md, README.md, Makefile)
+- 09/08/2023, 1:42 PM: Created main game structures (game, map, room, tile)
+- 09/10/2023, 3:33 PM: Added custom queue util. and core room population method
+- 09/11/2023, 11:24 PM: Added roads, once again, with better clarity
+- 09/12/2023, 10:32 AM: Recreated path algorithm
+- 09/12/2023, 12:05 PM: Dynamic allocation for rooms. Avoiding the creation of a room unless we're visitng it.
+- 09/12/2023, 6:23 PM: Added the game loop
+- 09/12/2023, 8:55 PM: Finished reading input with `fgets` and parsing with `sscanf`
+- 09/12/2023, 9:05 PM: Finalized moving between rooms on the map
+- 09/12/2023, 10:33 PM: Made Pokemon Center and Pokemart. Also ensured probability is based on distance from center
+- 09/17/2023, 6:30 PM: Created Player struct and appended the memory to the Game struct
+- 09/17/2023, 8:22 PM: Centralized rendering logic after repeated attempts to replace a terminal character in place failed
+- 09/17/2023, 8:30 PM: Displaying the seed in the terminal header
+- 09/17/2023, 8:47 PM: Implemented Trainer struct and Hiker/Rival tile cost functions
+- 09/17/2023, 11:10 PM: Made `Makefile` dependent on intermediate object files
+- 09/18/2023, 12:40 AM: Adapted fibbonacci heap structures and implementation
+- 09/20/2023, 3:15 PM: Bailed on the fibbonacci heap due to various segfaults
+- 09/20/2023, 4:24 PM: Used the existing queue to implement dijkstras, rather than a fibonacci heap.
+- 09/20/2023, 6:53 PM: Finished implementing the cost matrix logic.
+- 09/20/2023, 7:18 PM: Placed the Player on a random entrance to each room.
+- 09/20/2023, 8:28 PM: Implemented the matrix output in the game loop when moving rooms.
+- 09/21/2023, 11:33 AM: Finished reimplementing
+- 09/21/2023, 11:46 AM: Per assignment guidelines, Player is now placed on a random path in each room
+- 09/21/2023, 12:07 PM: Made entrances (gates) take on an infinite travel cost, per assignment guidelines
+- 09/21/2023, 12:40 PM: Cost is considered when traveling to a tile, not from.
+- 10/03/2023, 9:47 AM: Stripped out request for user input, display of hiker/rival cost maps, and other items not necessary for 1.04.
+- 10/03/2023, 10:40 AM: Added ncurses to the project and migrated existing rendering technique to use ncurses.
+- 10/04/2023, 1:05 AM: Implemented a variety of optimizations for room generation. Moreover, we now create a set number of trainers and display them as appropriate.
+- 10/04/2023, 1:53 AM: Fixed a bug where sentries were causing the map not to display due to infinitely searching for a tile placement with a movement cost < INT_MAX.
+- 10/04/2023, 4:52 PM: Implemented movement logic for Hiker, Rival
+- 10/04/2023, 7:35 PM: Implemented movement logic for Pacer, Explorer, and Wanderer
+- 10/04/2023, 7:41 PM: Fixed a bug where some trainers were entered the player character's tile.
+- 10/04/2023, 8:18 PM: Rewrote `README.md`
+- 10/05/2023, 11:45 AM: Fixed implicit import of `usleep`
+- 10/05/2023, 11:34 PM: Forgot `--numtrainers` switch. Implemented!
+- 10/09/2023, 12:55 PM: Added colors
+- 10/10/2023, 1:13 AM: Changed forest color and added status message
+- 10/10/2023, 12:09 PM: Added typedefs to shorten code and refactored include statements
+- 10/10/2023, 9:02 PM: Added game sate enum and player movement functionality
+- 10/10/2023, 9:30 PM: Implemented player movement
+- 10/14/2023, 4:46 PM: Did a complete rehaul of the menu system and added the trainer list, pokemon center menu, and pokemart menu
+- 10/17/2023, 1:27 AM: Completed battle screens for both the player entering a trainer and vice versa.
+- 10/26/2023, 1:53 PM: Finished room to room travel
+- 10/29/2023, 5:43 PM: Wrote the CSV parser and game data class
+- 10/30/2023, 11:30 AM: Introduced the various classes for loading in experience, moves, pokemon, pokemon moves, pokemon species, pokemon stats, pokemon types, stats, and type names.
+- 10/30/2023, 11:19 PM: Finalized the implementation of the CLI to load in only requested data and print it.
+- 11/05/2023, 11:37 PM: Added a cohesive pokemon class that combines relevant data for a Pokemon from the various CSVs.
+- 11/07/2023, 11:43 AM: Added a starter pokemon menu and implemented the ability to select a starter pokemon.
+- 10/07/2023, 10:40 PM: Implemented logic for trainers to receive pokemon
+- 10/07/2023, 11:35 PM: When moving through tall grass, the player has a 10% chance of encountering a random pokemon
+- 10/07/2023, 11:36: PM: In the interest of not ruining the UI, trainers are capped at 6 pokemon. Per the assignment, they have a 60% chance of the n+1st pokemon up to 6.
+- 11/22/2023, 5:26 PM: Implemented damage calculation for Pokemon in battles
+- 11/23/2023, 11:21 AM: Added visitation of Pokemarts and Pokemon Centers to replenish supplies and heal pokemon, respectively. Also, fixed a longstanding bug with the fly command.
+- 11/24/2023, 7:30 PM: Implemented battles, including the abilities to run, use potions, use revives, use pokeballs, switch pokemon, and fight.
+- 11/24/2023, 9:31 PM: Fixed a bug where the manhattan distance wasn't being calculated properly to decide pokemon levels.
+- 11/26/2023, 12:05 AM: Fixed a longstanding bug where `-Werror` on pyrite was causing g++ to throw a sign-compare error. Moreover, appended a missing `/` to the `/share/cs327/` data path for our csv data.

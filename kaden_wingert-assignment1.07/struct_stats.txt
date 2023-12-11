@@ -1,0 +1,57 @@
+struct stats_db //TODO...need to parse
+{
+  int id;
+  int damage_class_id;
+  char identifier[30];
+  int is_battle_only;
+  int game_index;
+
+};
+
+struct pokemon_types_db //TODO...need to parse
+{
+  int pokemon_id;
+  int type_id;
+  int slot;
+  
+};
+
+
+extern pokemon_move_db pokemon_moves[528239];
+extern pokemon_db pokemon[1093];
+extern char *types[19];
+extern move_db moves[845];
+extern pokemon_species_db species[899];
+extern experience_db experience[601];
+extern pokemon_stats_db pokemon_stats[6553];
+extern stats_db stats[9];
+extern pokemon_types_db pokemon_types[1676];
+
+
+
+
+
+
+
+  i = (strlen(getenv("HOME")) +
+       strlen("/.poke327/pokedex/pokedex/data/csv/") + 1); //For the second location, use getenv() to resolve the value of the HOME environment variable.
+  prefix = (char *) malloc(i);
+  strcpy(prefix, getenv("HOME"));
+  strcat(prefix, "/.poke327/pokedex/pokedex/data/csv/");
+  std::cout << "USING HOME FILE" <<std::endl; 
+
+  if (stat(prefix, &buf)) {
+    free(prefix);
+    prefix = NULL;
+  }
+
+  if (!prefix && !stat("/share/cs327", &buf)) { //Your program should first look under /share/cs327.
+    prefix = strdup("/share/cs327/pokedex/pokedex/data/csv/");
+    std::cout << "USING pyrite FILE" <<std::endl ;
+   } else if (!prefix) { //third option 
+     prefix = strdup("../../pokedex/pokedex/data/csv");
+     std::cout << "USING LOCAL C DRIVE FILE" <<std::endl ;
+   }
+  // else{
+  //   printf("Couldn't find file...Or it was found in the HOME location");
+  // }

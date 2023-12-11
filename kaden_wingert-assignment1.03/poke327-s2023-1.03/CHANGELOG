@@ -1,0 +1,13 @@
+2/11/2023 2:30 (pm)	Randomly generated a PC character on the board in a function called 
+				placePC(map_t *m). This also stores the PC position on the board in a pc 
+				struct
+2/11/2023 7:10 (pm)	Used a copy of the Dijkstra's algo that was given but made some modifications.
+				It now is able to print the path to the PC, but I didn't add the feature of 
+				blank spaces if you can't reach the pc from that position.
+	
+		
+	   
+
+   
+			
+

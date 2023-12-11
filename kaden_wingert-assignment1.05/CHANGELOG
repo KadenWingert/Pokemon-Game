@@ -1,0 +1,12 @@
+3/4/2023 4:32 (pm)	Implemented ncurses by replacing all puthcars, printfs, etc, with teh appropriate ncurses functions.
+				Also added color to the terrain
+
+
+	
+3/5/2023 2:26 (pm)     Added feature that prints the direction for certain key commands such as when you try to move the pc			
+
+3/5/2023 7:36 (pm)     Added trainer list, and it allows you to exit with the esc key. No trainers are allowed to move while this is open.
+	   
+3/13/2023 8:39 (pm)	Added feature that initiates battle when pc attempts to move into the cell of an npc or vice versa   
+			
+

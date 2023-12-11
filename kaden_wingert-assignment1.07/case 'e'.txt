@@ -1,0 +1,76 @@
+        case 'e':
+
+          experience_db experience[601];
+
+          FILE *f;
+          char line[800];
+          int i;
+          char *tmp;
+          struct stat buf;
+          char *prefix;
+          int prefix_len;
+          i = (strlen(getenv("HOME")) +
+               strlen("/.poke327/pokedex/pokedex/data/csv/") + 1);
+          prefix = (char *)malloc(i);
+          strcpy(prefix, getenv("HOME"));
+          strcat(prefix, "/.poke327/pokedex/pokedex/data/csv/");
+
+          if (stat(prefix, &buf))
+          {
+            free(prefix);
+            prefix = NULL;
+          }
+
+          if (!prefix && !stat("/share/cs327", &buf))
+          {
+            prefix = strdup("/share/cs327/pokedex/pokedex/data/csv/");
+          }
+          else if (!prefix)
+          {
+            prefix = strdup("../pokedex");
+            // Your third location goes here, if needed.
+            // prefix is freed later, so be sure you malloc it
+          }
+
+          printf("%s\n", prefix);
+
+          prefix_len = strlen(prefix);
+           prefix = (char *)realloc(prefix, prefix_len + strlen("experience.csv") + 1);
+  strcpy(prefix + prefix_len, "experience.csv");
+
+  f = fopen(prefix, "r");
+
+  // No null byte copied here, so prefix is not technically a string anymore.
+  prefix = (char *)realloc(prefix, prefix_len + 1);
+
+  fgets(line, 800, f);
+
+  for (i = 1; i <= 600; i++)
+  {
+    fgets(line, 800, f);
+    
+
+    experience[i].growth_rate_id = atoi((tmp = next_token(line, ',')));
+    tmp = next_token(NULL, ',');
+    experience[i].level = *tmp ? atoi(tmp) : -1;
+    tmp = next_token(NULL, ',');
+    experience[i].experience = *tmp ? atoi(tmp) : -1;
+  }
+
+  fclose(f);
+
+  if (parse)
+  {
+    printf("PRINTING EXPERIENCE.CSV\n");
+
+    for (i = 1; i <= 600; i++)
+    {
+      printf("%d %d %d\n",
+             experience[i].growth_rate_id,
+             experience[i].level,
+             experience[i].experience);
+    }
+  }
+  free(prefix);
+
+          parse = false;
